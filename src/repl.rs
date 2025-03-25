@@ -4,7 +4,7 @@ pub fn repl() {
     let banner = format!("Jembut {}", env!("CARGO_PKG_VERSION"));
     println!("{}", banner);
     println!("type 'fuck' to get fucked");
-    println!("Press 'exit' or 'quit' to kill yourself");
+    println!("type 'exit' or 'quit' to kill yourself");
     loop {
         print!("> ");
         stdout().flush().unwrap();
