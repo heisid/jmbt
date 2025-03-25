@@ -1,5 +1,3 @@
-use crate::statement::StatementType::Unknown;
-
 pub enum PrepareResult {
     Success,
     Unrecognized(String),
@@ -17,7 +15,7 @@ pub struct Statement {
 
 impl Statement {
     pub fn new() -> Self {
-        Self { statement_type: Unknown}
+        Self { statement_type: StatementType::Unknown}
     }
 
     pub fn prepare(&mut self) -> PrepareResult {
