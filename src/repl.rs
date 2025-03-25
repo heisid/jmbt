@@ -1,4 +1,5 @@
 use std::io::{stdin, stdout, Write};
+use crate::statement::Statement;
 
 pub fn repl() {
     let banner = format!("Jembut {}", env!("CARGO_PKG_VERSION"));
@@ -29,5 +30,9 @@ fn cmd_router(cmd: &str) -> Option<&str> {
             _ => return Some("Unrecognized command"),
         }
     }
-    Some("kunyuk")
+    let mut statement = Statement::new();
+    if let Err(err) = statement.prepare() {
+        return Some(err);
+    }
+    None
 }
